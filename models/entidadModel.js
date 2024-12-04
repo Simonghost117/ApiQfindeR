@@ -16,7 +16,7 @@ const Entidad = sequelize.define(
     Identificacion: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      unique: false,//cambiar a true cuando se agreguen los endpoints de entidad!!!!
+      unique: true,//cambiar a true cuando se agreguen los endpoints de entidad!!!!
     },
     Contacto: {
       type: DataTypes.STRING(100),

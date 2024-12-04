@@ -3,17 +3,18 @@ const dotenv = require("dotenv");
 let sequelize = require("./config/database");
 const pacienteRouter = require('./routes/pacienteRouter');
 const actividadRouter = require('./routes/actividadRouter');
-const cuidadorRouter = require('./routes/cuidadorRouter')
+const cuidadorRouter = require('./routes/cuidadorRouter');
+const entidadRouter= require('./routes/entidadRouter');
 
-require("dotenv").config();
+dotenv.config();
 const app = express();
 const port = process.env.PORT;
-
 app.use(express.json());
 
 app.use('/api',pacienteRouter);
 app.use('/api', actividadRouter);
 app.use('/api',cuidadorRouter);
+app.use('/api',entidadRouter);
 
 const startDB = async () => {
     try {

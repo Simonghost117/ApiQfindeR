@@ -1,6 +1,7 @@
 let actividad = require("../models/actividadModel");
 const Paciente = require("../models/pacienteModel");
 const Cuidador = require('../models/cuidadorModel');
+
 class Actividad {
   static async obtenerActividad() {
     try {
