@@ -5,6 +5,7 @@ const pacienteRouter = require('./routes/pacienteRouter');
 const actividadRouter = require('./routes/actividadRouter');
 const cuidadorRouter = require('./routes/cuidadorRouter');
 const entidadRouter= require('./routes/entidadRouter');
+const usuarioRouter = require('./routes/usuarioRouter')
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,7 @@ app.use('/api',pacienteRouter);
 app.use('/api', actividadRouter);
 app.use('/api',cuidadorRouter);
 app.use('/api',entidadRouter);
+app.use('/api',usuarioRouter);
 
 const startDB = async () => {
     try {

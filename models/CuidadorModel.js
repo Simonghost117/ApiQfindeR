@@ -30,7 +30,7 @@ let cuidador = sequelize.define(
           key:'ID'
       }
   },
-  
+
   },
   {
     tableName: "Cuidador",
@@ -38,4 +38,5 @@ let cuidador = sequelize.define(
   }
 );
 cuidador.belongsTo(Entidad, { foreignKey: "EntidadID" });
+
 module.exports = cuidador;

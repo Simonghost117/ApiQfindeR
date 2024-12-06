@@ -1,6 +1,7 @@
 let DataTypes = require("sequelize");
 let sequelize = require("../config/database");
 const Entidad = require("./entidadModel");
+const Usuario = require("./UsuarioModel")
 
 let Paciente = sequelize.define(
   "Paciente",
@@ -33,12 +34,20 @@ let Paciente = sequelize.define(
         key: "ID",
       },
     },
+    UsuarioID:{
+      type:DataTypes.INTEGER,
+      references:{
+          model: Usuario,
+          key:'ID'
+      }
+  },
   },
   {
     tableName: "Paciente",
     timestamps: false,
   }
 );
+Paciente.belongsTo(Usuario, { foreignKey: "UsuarioID" });
 Paciente.belongsTo(Entidad, { foreignKey: 'EntidadID', as: 'EntidadRelacionada' });
 
 module.exports = Paciente;
