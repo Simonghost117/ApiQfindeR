@@ -24,10 +24,12 @@ class UsuarioService {
         }
     }
     static async crearUsuario (datos) {
+        console.log(datos)
         try {
             let usuariito = await Usuario.create(datos);
             return usuariito;
         } catch (e) {
+            console.log(e)
             console.log ("Usuario no creado")
         }
     }

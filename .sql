@@ -58,10 +58,12 @@ CREATE TABLE Actividad (
 -- Tabla de notas médicas
 CREATE TABLE Nota_Medica (
     ID INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(80) NOT NULL,
     PacienteID INT NOT NULL,
     AutorID INT NOT NULL,
     Contenido TEXT NOT NULL,
     FechaHora DATETIME DEFAULT CURRENT_TIMESTAMP,
+    imagen VARCHAR(20),
     FOREIGN KEY (PacienteID) REFERENCES Paciente(ID),
     FOREIGN KEY (AutorID) REFERENCES Usuario(ID)
 );
